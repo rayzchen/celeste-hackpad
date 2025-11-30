@@ -3,4 +3,5 @@
   (lib (name "XIAO")(type "KiCad")(uri "${KIPRJMOD}/libraries/Seeed Studio XIAO Series Library")(options "")(descr ""))
   (lib (name "OLED")(type "KiCad")(uri "${KIPRJMOD}/libraries/KiCad-SSD1306-0.91-OLED-4pin-128x32.pretty")(options "")(descr ""))
   (lib (name "MX")(type "KiCad")(uri "${KIPRJMOD}/libraries/marbastlib-mx.pretty")(options "")(descr ""))
+  (lib (name "local")(type "KiCad")(uri "${KIPRJMOD}/")(options "")(descr ""))
 )
