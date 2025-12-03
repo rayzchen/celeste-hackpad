@@ -76,6 +76,7 @@
 		(pad_to_mask_clearance 0)
 		(allow_soldermask_bridges_in_footprints no)
 		(tenting front back)
+		(aux_axis_origin 39.290658 39.290658)
 		(pcbplotparams
 			(layerselection 0x00000000_00000000_55555555_5755f5ff)
 			(plot_on_all_layers_selection 0x00000000_00000000_00000000_00000000)
@@ -1673,7 +1674,7 @@
 			(drill oval 2.8 1.5)
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
-			(uuid "30a5ce7b-f0a7-490d-b230-0a81fa2bbe9a")
+			(uuid "9ce09791-5662-4312-8872-b1730bd248ce")
 		)
 		(pad "S1" thru_hole circle
 			(at 7 2.5)
@@ -5160,7 +5161,7 @@
 		(property "Reference" "J1"
 			(at 1.9 5.91 90)
 			(layer "F.SilkS")
-			(uuid "f32f7772-3105-4c36-8369-a723ab460504")
+			(uuid "ac1aefc7-64d7-465b-9faf-ecab32d0a22d")
 			(effects
 				(font
 					(size 1 1)
@@ -5171,7 +5172,7 @@
 		(property "Value" "OLED"
 			(at 18.5 14 0)
 			(layer "F.Fab")
-			(uuid "9d8de666-9673-445d-beae-ba011f5dfbba")
+			(uuid "69e0bd8c-f0cc-4398-9da2-dc9d44cd8fb7")
 			(effects
 				(font
 					(size 1 1)
@@ -5183,7 +5184,7 @@
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "9eea6aa3-50f4-4aee-b908-2cfede9f4b95")
+			(uuid "9bbad7ed-adee-412e-be01-038b54fef4fa")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5195,7 +5196,7 @@
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "1451e461-f2a3-4733-9459-2c04de1846e5")
+			(uuid "20640c0c-80fb-49de-b5fb-77f4dc3bf9a1")
 			(effects
 				(font
 					(size 1.27 1.27)

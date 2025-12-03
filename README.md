@@ -7,6 +7,11 @@
 ## PCB
 ![PCB routing](images/pcb-routing.png)
 
+## CAD assembly
+![Components](images/components.png)
+
+![Full case](images/case.png)
+
 ## BOM
 - 8x Cherry MX Switches
 - 8x DSA Keycaps
