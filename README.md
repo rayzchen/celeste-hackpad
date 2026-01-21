@@ -28,3 +28,5 @@ To aid speedrunning Celeste, many key chords have been implemented.
 - Arrow keys + Esc: S (bound to crouch dash)
 - C + Up arrow: D (bound to second jump button)
 - Esc + Up arrow: Toggle LEDs
+- Esc + Left arrow: Alt+Tab
+- Z + Esc: Tab (bound to journal)
