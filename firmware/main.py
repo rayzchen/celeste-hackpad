@@ -60,6 +60,26 @@ class ArrowDualKey(DualKey):
             self.key.on_press(keyboard, coord_int)
         return keyboard
 
+class AltTabDualKey(DualKey):
+    def __init__(self, key, modifier):
+        super().__init__(key, modifier, KC.TAB)
+        self.alt_held = False
+        self.release_backup = None
+
+    def on_press(self, keyboard, coord_int=None):
+        if self.modifier in keyboard.keys_pressed and not self.alt_held:
+            KC.LALT.on_press(keyboard, coord_int)
+            self.alt_held = True
+            self.release_backup = self.modifier.on_release
+            self.modifier.on_release = self.release_wrapper
+        super().on_press(keyboard, coord_int=None)
+
+    def release_wrapper(self, keyboard, coord_int=None):
+        KC.LALT.on_release(keyboard, coord_int)
+        self.alt_held = False
+        self.modifier.on_release = self.release_backup
+        self.modifier.on_release(keyboard, coord_int)
+
 keyboard = KMKKeyboard()
 keyboard.extensions.append(MediaKeys())
 
@@ -77,7 +97,9 @@ i2c = busio.I2C(scl=board.D5, sda=board.D4)
 oled = SSD1306(i2c, board.D4, board.D5)
 display = Display(
     display=oled,
-    entries=[TextEntry("Celeste Hackpad", x_anchor="M", y_anchor="M", x=64, y=12)],
+    entries=[
+        TextEntry("Celeste Hackpad", x_anchor="M", y_anchor="M", x=64, y=8),
+    ],
     height=32,
     flip=True
 )
@@ -95,9 +117,12 @@ keyboard.row_pins = [board.D7, board.D8, board.D10]
 keyboard.diode_orientation = DiodeOrientation.COL2ROW
 keyboard.keymap = [
     [
-        KC.RIGHT, DualKey(KC.DOWN, KC.ESC, KC.F), DualKey(RGBToggle(KC.ESC, KC.UP, rgb), KC.C, KC.D),
-        KC.LEFT, KC.C, KC.X,
-        KC.Z, ArrowDualKey(KC.ESC, KC.S), KC.AUDIO_MUTE
+        KC.RIGHT,
+        DualKey(DualKey(KC.DOWN, KC.ESC, KC.F), KC.UP, KC.D),
+        RGBToggle(KC.ESC, KC.UP, rgb),
+        AltTabDualKey(KC.LEFT, KC.ESC), KC.C, KC.X,
+        KC.Z, DualKey(ArrowDualKey(KC.ESC, KC.S), KC.Z, KC.TAB),
+        KC.AUDIO_MUTE
     ],
 ]
 
